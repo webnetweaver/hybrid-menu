@@ -1,4 +1,43 @@
 var menuTimer,menuEle,menuOpen;
+
+function sanitize(input)
+{
+    var filter;
+    filter = /[;)(]|%27|%22|%3C|%3E|%uFF1C|%uFF1E|%u003C|%u003E|%u0028|%u0029|%u0027|%u0022|%u003B/g;
+    return input.replace(filter, "");
+}
+
+function isMobileBrowser()
+{
+
+    //this list should be updated periodically
+    var UserAgents = new Array("mobi","NetFront","Windows CE","Android","iPhone","Nextel","Alcatel 735i","LG 8","Samsung","BlackBerry","Java/1.4.1_02","Blazer","Palm","SMARTPHONE","Danger","hiptop","MOT","RAZR","AUDIOVOX","Symbian","Nokia","Sony Ericsson","Googlebot-Mobile");
+    var AgentString = sanitize(navigator.userAgent.toUpperCase());
+
+    if(AgentString.indexOf("IPAD")>-1 || AgentString.indexOf("TABLET")>-1 )
+    {
+        return false;
+    }
+
+    for(x in UserAgents)
+    {
+        if(AgentString.indexOf(String(UserAgents[x]).toUpperCase())>-1)
+            return true;
+    }
+
+    return false;
+}
+
+function isTabletBrowser()
+{
+    var AgentString = sanitize(navigator.userAgent.toUpperCase());
+
+    if(AgentString.indexOf("IPAD")>-1 || AgentString.indexOf("TABLET")>-1 )
+    {
+        return true;
+    }
+}
+
 function initNav(containerId, element, menucontainer)
 {
 	mainNavEles =	$("#"+containerId+" > "+element);
