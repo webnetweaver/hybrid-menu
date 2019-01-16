@@ -2,20 +2,22 @@
 
 This script is useful for setting up a menu which exhibits appropriate click behavior for desktop and mobile websites.
 
-For desktop, the menu will display when the mouse hovers over the menu root element and disappears when the mouse moves away.
+For desktop, the menu will display when the mouse hovers over the menu root element and disappears when the mouse move outside of the dropdown menu entirely.
 
-For mobile, the menu will be displayed when a menu root element is clicked and disappears when clicking outside the menu.
+For mobile, the menu will be displayed when a menu root element is clicked and disappears when clicking outside the dropdown menu.
 
-This script requires jQuery.
+This script requires the jQuery library.
 
 Additionally, the menu system requires five parts:
 
-1.  A unique root html element for each separate dropdown menu.
-2.  A list of individual menu html elements within each dropdown root element.
+1.  A unique root html element for each separate dropdown menu. Usually a styled <ul> element.
+2.  A list of individual menu html elements within each dropdown root element.  Usually a styled <li> element.
 3.  Anchor links(<a>) within each menu element.
-4.  A container element containing all menu root elements.
+4.  A container element containing all menu root elements. Usually a styled <div> element.
 5.  Implementation of a "hover" class for each dropdown root element consisting of styles implementing the active or visible state of a menu dropdown.
   
-The menu system manages detection of when to apply the "hover" class to each dropdown root element and when to remove it based on user input.
+The menu system applies and removes the "hover" class to each dropdown root element based on user input.
 
-It is up to the user to implement the CSS styles implementing toggling of each dropdown menu.  The implementation of the hover class for the menu may consist of modification of a display or visibility rule for instance.
+It is up to the user to implement the CSS styles implementing toggling of each dropdown menu.  The implementation of the "hover" class for the menu may consist of modification of a display or visibility rule for instance.
+
+
