@@ -1,6 +1,7 @@
-function initNav()
+var menuTimer,menuEle,menuOpen;
+function initNav(containerId, element, container)
 {
-	mainNavEles =	$(".js-nav-toggle > li");
+	mainNavEles =	$("#"+containerId+" > "+element);
 
 	if(!isMobileBrowser() && !isTabletBrowser())
 	{
@@ -12,8 +13,6 @@ function initNav()
 				menuTimer = setTimeout(function(){
 					menuEle.addClass("hover");
 					var tLabel = menuEle.children("a").data("clickEvent");
-					if(typeof hoverAdConfig != 'undefined')
-						findHoverAd(menuEle);
 				},300);
 			}
 			else if(event.type=="mouseleave")
@@ -26,7 +25,7 @@ function initNav()
 	}
 	else
 	{
-		mainNavLinks =	$(".js-nav-toggle > li > a");
+		mainNavLinks =	$("#"+containerId+" > "+element+" > a");
 
 		//suppress default behavior for these links
 		mainNavLinks.each(function(){
@@ -56,8 +55,6 @@ function initNav()
 				oldMenuEle.removeClass("hover");
 				menuEle.addClass("hover");
 				var tLabel = menuEle.children("a").data("clickEvent");
-				if(typeof hoverAdConfig != 'undefined')
-					findHoverAd(menuEle);
 				menuOpen = true;
 			}
 			menuTS = event.pageX;//store mouse position for silk and android
@@ -91,7 +88,7 @@ function initNav()
 		$(document).on("mouseover", function(event) {
 			if(menuOpen)//menu is open
 			{
-				if (!$(event.target).closest('#js-nav-toggle', document.getElementById("js-nav-toggle")).length) 
+				if (!$(event.target).closest("#"+containerId, document.getElementById(containerId)).length) 
 				{
 					//not from the menu
 					menuEle.removeClass("hover");
@@ -99,8 +96,7 @@ function initNav()
 				}
 			}
 		}).ready(function(){//for safari ios which only bubbles events on elements with cursor = "pointer"
-			document.getElementById("container").style.cursor = "pointer";
-			document.getElementById("global_header").style.cursor = "pointer";
+			document.getElementById("#"+container).style.cursor = "pointer";
 		});
 
 	}
