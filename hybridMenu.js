@@ -1,5 +1,5 @@
 var menuTimer,menuEle,menuOpen;
-function initNav(containerId, element, container)
+function initNav(containerId, element, menucontainer)
 {
 	mainNavEles =	$("#"+containerId+" > "+element);
 
@@ -96,7 +96,7 @@ function initNav(containerId, element, container)
 				}
 			}
 		}).ready(function(){//for safari ios which only bubbles events on elements with cursor = "pointer"
-			document.getElementById("#"+container).style.cursor = "pointer";
+			document.getElementById("#"+menucontainer).style.cursor = "pointer";
 		});
 
 	}
