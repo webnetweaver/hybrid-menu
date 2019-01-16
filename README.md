@@ -10,11 +10,11 @@ This script requires the jQuery library.
 
 Additionally, the menu system requires five parts:
 
-1.  A unique root html element for each separate dropdown menu.  Usually styled <ul> element.
-2.  A list of individual menu html elements within each dropdown root element.  Usually a styled <li> element.
-3.  Anchor links(<a>) within each menu element.
-4.  A container element containing all menu root elements. Usually a styled <div> element.
-5.  Implementation of a "hover" class for each dropdown root element consisting of styles implementing the active or visible state of a menu dropdown.
+-  A unique root html element for each separate dropdown menu.  Usually styled <ul> element.
+-  A list of individual menu html elements within each dropdown root element.  Usually a styled <li> element.
+-  Anchor links(<a>) within each menu element.
+-  A container element containing all menu root elements. Usually a styled <div> element.
+-  Implementation of a "hover" class for each dropdown root element consisting of styles implementing the active or visible state of a menu dropdown.
   
 The menu system applies and removes the "hover" class to each dropdown root element based on user input.
 
