@@ -14,8 +14,8 @@ Additionally, the menu system requires five parts:
 2.  A list of individual menu html elements within each dropdown root element.
 3.  Anchor links(<a>) within each menu element.
 4.  A container element containing all menu root elements.
-5.  Implementation of a "hover" class for each dropdown root element consisting of styles representing the active or visible state of a menu dropdown.
+5.  Implementation of a "hover" class for each dropdown root element consisting of styles implementing the active or visible state of a menu dropdown.
   
-The menu system manages detection of when to apply a "hover" class to each dropdown root element and when to remove it based on user input.
+The menu system manages detection of when to apply the "hover" class to each dropdown root element and when to remove it based on user input.
 
-It is up to the user to implement the actual CSS styles implementing toggling of the menu.  Toggling the menu may consist of modification of a display or visibility rule for instance.
+It is up to the user to implement the CSS styles implementing toggling of each dropdown menu.  The implementation of the hover class for the menu may consist of modification of a display or visibility rule for instance.
