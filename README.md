@@ -10,7 +10,7 @@ This script requires the jQuery library.
 
 Additionally, the menu system requires five parts:
 
-1.  A unique root html element for each separate dropdown menu. Usually a styled <ul> element.
+1.  A unique root html element for each separate dropdown menu.  Usually styled <ul> element.
 2.  A list of individual menu html elements within each dropdown root element.  Usually a styled <li> element.
 3.  Anchor links(<a>) within each menu element.
 4.  A container element containing all menu root elements. Usually a styled <div> element.
@@ -20,4 +20,14 @@ The menu system applies and removes the "hover" class to each dropdown root elem
 
 It is up to the user to implement the CSS styles implementing toggling of each dropdown menu.  The implementation of the "hover" class for the menu may consist of modification of a display or visibility rule for instance.
 
+Call the function as follows:
 
+initNav(containerId, element, menucontainer)
+
+Where:
+
+- containerId is the Id of a dropdown root element.
+- element is a class or selector for each menu html element.
+- menucontainer is the Id of the container containing all menu root elements.
+
+Call this function once for each individual dropdown containerId.
